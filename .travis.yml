@@ -5,7 +5,7 @@ language: minimal
 
 after_success:
     # - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
-    - echo $DOCKER_PASS | sudo docker login -u$DOCKER_USER --password-stdin
+    - docker login -u$DOCKER_USER -p$DOCKER_PASS
     - ./autobuild "latest"
     - ./autobuild "$(git describe --tags $(git rev-list --tags --max-count=1))"
     - docker logout
