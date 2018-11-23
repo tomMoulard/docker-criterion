@@ -1,4 +1,7 @@
 # docker-criterion
+
+[![Build Status](https://travis-ci.com/tomMoulard/docker-criterion.svg?branch=master)](https://travis-ci.com/tomMoulard/docker-criterion)
+
 Docker image/Dockerfile for criterion
 
 ## Build
