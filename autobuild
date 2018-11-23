@@ -1,3 +1,3 @@
 #!/bin/bash
-docker build -n tommoulard/criterion:"$1" .
+docker build -t tommoulard/criterion:"$1" .
 docker push  tommoulard/criterion:"$1"
