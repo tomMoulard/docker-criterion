@@ -5,13 +5,8 @@ language: minimal
 
 after_success:
     # - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
-    - docker login -u$DOCKER_USER -p$DOCKER_PASS
+    # - docker login -u$DOCKER_USER -p$DOCKER_PASS
+    - docker login -e="$DOCKER_MAIL" -u="$DOCKER_USER" -p="$DOCKER_PASS"
     - ./autobuild "latest"
     - ./autobuild "$(git describe --tags $(git rev-list --tags --max-count=1))"
     - docker logout
-
-env:
-    global:
-        - secure: "KzJ3BHSRpZtBFFkVk2rPeaP9PC+r+XoUyfi6NahR/G9rqdIPTDkZU0+osDGlj/2+bWgq5TSVIsYnmp5JgINeGWLabc3GvO7MgPhL72nF+4HS3vcjK3CRA3sEuPv3rz37UqXn3V73+Cdpfcmsb/os7X1UuHkbxtAKpEprX6C//CWWrR7Ulq8Uuq5Kgm9I3f/8i/szXysCGZ5r7v/aCQUtOs2JrMWVmQ58nhHlx9KQ2jg2UsVEBMxjKguiw+taZoVKDebjVLvkXGwZMkXYUefhw1k1UXzlJtpo49JVQCWWPbkhF/KAc4ib+27/eJHVSZzPzWkIF6V2W7NwdNzS8YS9Y/Or/1VJkoPdbpNyj9JQaRXn904AZ/u+BbSHoIpW4Q/kopvHqlfhXuxw/PHjjrXXAF8MdreJSe68WWNq0OM4NsqpTul2Mi94YM8ZLcp/JZKn6svAkcieoKxuAkQ4m7wfamLD8yJvmn3T89BNbQwD2O1klxjqvwOWFM7a7l/H9r00uP6A8UuPHQ0sz0Hc7vJ3/IHC7wpOnn7hHw2/c+MdtGAy36U16Ki7G4XosbufFwCSkNZlDthX+9MAX1xdDC0PlW1OVhMVYGJlSgMwEjeplZ0PeWhisRO3bR0/6u8rj3yix5qAhGLtKp3I+0jMnA+IRV/vk7arszAGN5afwyk9elk="
-        - secure: "cqSl22ULIVH0e/BJSTAAGKdVlDpdllE6YPsEtwMvy9uptoNkPglF0OqT2MVX0tli13m11u1IWQORD4F7spv+iBZrIzfIz/D10vw42PjPZE1mh3qBaIlz5uviHsWT5rJKRLV4WXaAovZSa5R9uW7aSaJ0EYNsA6q/AFaGe/imtsFLCTBIzg8V4qHNHA1F2LhVkPK5dl34f3UaLxtHPlf1i/IfJ1rA9qLC7lXv5nNYTlGMgPXQVeaAczTVM1J3Sus/uoW/8RVkBrUR3PxBqYOGFf8M8dFdg1/Cy4WmLOyrgn65iu1nHDhJeAf0S+NZOOJIXU+zMfltPpR4PmYpKIK66SrHTtECTXBr2AEc0CSNwstcFq5i3jZfiElCf2IQCLkikI8jMi6XP9L/P+4CZbMf2euMUiQxn96FI7SnF9yEPSiiGOei4RDKg9tZP2+ohvCC282SfIxfMYuYH2LpHImc6hBPNGHhnUdNMpD1a1qicdhH2IXpPEW6EqZJtpKQxWFtU2PdwI13hjgZE8ZWwxVkC0Cp4TPEPEhl9zCPgaI4gkYSIP5BggCw3rdMnrdgQ0E2xB1GamjQFPByRObNb7hiKrBxo+mPpcH46FoALjhDpyHFRzpYogyWOjNzLPX31QMRivUx60FLm8zTMhtxrw6IwrtG1J4gY7NadmrLBBMwpbU="
-        - secure: "BxFs5tZrz2zBIKq9M8K9wPPKeDW4MWmRi91hZO/XJFh4GgqeQddKAlVbcNYgMCqagYp1upzM2aiRjpY1ca+iYFUB5TZZcykp40OkQgkygtdC5C0KC3dElc8sDZU1HD7mh7xm+gDu6sGy+521hGsiwGKtasijU87JmcKBTdRxpk7A9zZWBUMmwtzPwKq6hM4jzkDPVlAVnsn7TRO8BwuaAqV/QMCPXQEaF1Ucxh8IjIYuRHk9zNasupkB3oMVZVvyyc8/ozCbvJh5zFenAClkY263lGNkTOALIdfZhZ2cAPFM3BzL2S3qsSWQWcKuqOZIaFMkeXpD50hYuZ4re0ZY8/h4RdpmSC+x7IKtUra+llZwHKwonKD70eZ6uoTvp9M4dCLcqkPvh+asWJyspzCVRjefK9ipITH2mKMW6LmE8FVOETDPDpjZP9Z+mdTGY42M1yhiuZRY7voNG0NrKpLjxqdxgZ4qegW6ajMt2Rikz1aYdS8xfkOW2s19Zitzn9WIp5XPbb73fv29YyWyo07WBqS3IqBaGwDoMlW2LnEtWhQQvwOb3XUNNZH5TTH6WepzhlK4MHAGHak48WDWVgppYjF+laqa492km5mX6C4L833xFciyRVcHRpnEP1ytkig8qkl8+xKqL364t0cutTwyVqcEMCVV8uBo8wC8ri5hcGU="
