@@ -1,18 +1,22 @@
 FROM ubuntu:18.04
 MAINTAINER tom@moulard.org
 
-RUN apt-get update && apt-get upgrade -y
-RUN apt-get install -y wget
-RUN apt-get install -y build-essential
-RUN apt-get install -y cmake
-RUN apt-get install -y python3
-RUN apt-get install -y libreadline-dev
-RUN apt-get install -y valgrind
-RUN apt-get install -y --reinstall make
+RUN apt update && apt upgrade -y
+RUN apt upgrade --fix-missing -y
+RUN apt install -y wget
+RUN apt install -y build-essential
+RUN apt install -y cmake
+RUN apt install -y python3
+RUN apt install -y libreadline-dev
+RUN apt install -y valgrind
+RUN apt install -y --reinstall make
+RUN apt install -y net-tools
+RUN apt install -y iputils-ping
+
 RUN wget https://github.com/Snaipe/Criterion/releases/download/v2.3.3/criterion-v2.3.3-linux-x86_64.tar.bz2
 RUN tar xvf criterion-v2.3.3-linux-x86_64.tar.bz2
 
 RUN cp -r /criterion-v2.3.3/lib/* /usr/lib/
 RUN cp -r /criterion-v2.3.3/include/* /usr/include/
 
-RUN ["/bin/sh"]
+# RUN ["/bin/sh"]
