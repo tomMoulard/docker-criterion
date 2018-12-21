@@ -1,5 +1,4 @@
 FROM ubuntu:18.04
-MAINTAINER tom@moulard.org
 
 RUN apt update && apt upgrade -y
 RUN apt upgrade --fix-missing -y
