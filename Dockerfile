@@ -4,7 +4,9 @@ RUN apt update && apt upgrade -y
 RUN apt upgrade --fix-missing -y
 RUN apt install -y --reinstall wget build-essential cmake python3 \
 libreadline-dev valgrind make net-tools iputils-ping iproute2 autoconf \
-libtool flex libboost-all-dev g++-8 autoconf-archive libev-dev libssl-dev
+libtool flex libboost-all-dev g++-8 autoconf-archive libev-dev libssl-dev \
+automake python3-requests
+
 # Criterion
 RUN wget https://github.com/Snaipe/Criterion/releases/download/v2.3.3/criterion-v2.3.3-linux-x86_64.tar.bz2
 RUN tar xvf criterion-v2.3.3-linux-x86_64.tar.bz2
