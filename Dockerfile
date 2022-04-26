@@ -10,14 +10,15 @@ RUN apt update && apt upgrade -y && apt upgrade --fix-missing -y && \
 	apt install -y wget build-essential cmake python3 libreadline-dev \
 	valgrind make net-tools iputils-ping iproute2 autoconf \
 	libtool flex libboost-all-dev g++-8 autoconf-archive \
-	libev-dev libssl-dev automake python3-requests python3-pip
+	libev-dev libssl-dev automake python3-requests python3-pip \
+	xz-utils
 
 # Criterion
-RUN wget https://github.com/Snaipe/Criterion/releases/download/v2.4.1/criterion-v2.4.1-linux-x86_64.tar.bz2 && \
-	tar xvf criterion-v2.4.1-linux-x86_64.tar.bz2 && \
-	cp -r /criterion-v2.4.1/lib/* /usr/lib/ && \
-	cp -r /criterion-v2.4.1/include/* /usr/include/ && \
-	rm criterion-v2.4.1-linux-x86_64.tar.bz2
+RUN wget https://github.com/Snaipe/Criterion/releases/download/v2.4.1/criterion-2.4.1-linux-x86_64.tar.xz && \
+	tar xvf criterion-2.4.1-linux-x86_64.tar.xz && \
+	cp -r /criterion-2.4.1/lib/* /usr/lib/ && \
+	cp -r /criterion-2.4.1/include/* /usr/include/ && \
+	rm criterion-2.4.1-linux-x86_64.tar.xz
 
 # Bison-epita
 RUN wget https://www.lrde.epita.fr/~tiger/download/bison-3.2.1.52-cd4f7.tar.gz && \
