@@ -13,13 +13,13 @@ RUN apt install -y libtool flex libboost-all-dev g++-8 autoconf-archive
 RUN apt install -y libev-dev libssl-dev automake python3-requests python3-pip
 
 # Criterion
-RUN wget https://github.com/Snaipe/Criterion/releases/download/v2.3.3/criterion-v2.3.3-linux-x86_64.tar.bz2
-RUN tar xvf criterion-v2.3.3-linux-x86_64.tar.bz2
-RUN cp -r /criterion-v2.3.3/lib/* /usr/lib/
-RUN cp -r /criterion-v2.3.3/include/* /usr/include/
+RUN wget https://github.com/Snaipe/Criterion/releases/download/v2.4.1/criterion-v2.4.1-linux-x86_64.tar.bz2
+RUN tar xvf criterion-v2.4.1-linux-x86_64.tar.bz2
+RUN cp -r /criterion-v2.4.1/lib/* /usr/lib/
+RUN cp -r /criterion-v2.4.1/include/* /usr/include/
 
 WORKDIR /
-RUN rm criterion-v2.3.3-linux-x86_64.tar.bz2
+RUN rm criterion-v2.4.1-linux-x86_64.tar.bz2
 
 # Bison-epita
 RUN wget https://www.lrde.epita.fr/~tiger/download/bison-3.2.1.52-cd4f7.tar.gz
